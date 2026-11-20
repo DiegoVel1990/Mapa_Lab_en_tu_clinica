@@ -18,11 +18,11 @@
         <label class="field-label" for="lab-select">UNIDAD DE REFERENCIA (LABORATORIO)</label><select id="lab-select"><option value="">SELECCIONA UN LABORATORIO</option></select>
         <label class="field-label radius-label" for="radius-input">RADIO DE BÚSQUEDA</label><div class="radius-input"><input id="radius-input" type="number" min="10" max="20" step="1" value="10" inputmode="numeric"><span>KM</span></div><p class="radius-note">ELIGE UN RADIO DE 10 A 20 KM</p>
         <button id="search-button" class="primary-button" disabled>BUSCAR UNIDADES <span>→</span></button><button id="clear-button" class="secondary-button clear-button" type="button">LIMPIAR BÚSQUEDA <span>↺</span></button>
-        <a class="secondary-button national-download" href="./data/relacion_nacional_laboratorios_10km.csv" download>DESCARGAR RELACIÓN NACIONAL · 85 LABORATORIOS · 10 KM <span>↓</span></a>
         <button id="download-csv" class="secondary-button" hidden>DESCARGAR RESULTADOS CSV <span>↓</span></button>
         <div id="results" class="results" aria-live="polite"></div>
       </section>
       <div class="sidebar-note">LOS TAMAÑOS REFLEJAN EL NÚMERO DE ÓRDENES. ACERCA EL MAPA PARA DISTINGUIR PUNTOS SUPERPUESTOS.</div>
+      <a class="secondary-button national-download" href="./data/relacion_nacional_laboratorios_10km.csv" download>DESCARGAR RELACIÓN NACIONAL · 85 LABORATORIOS · 10 KM <span>↓</span></a>
     </aside>
     <section class="map-area" aria-label="Mapa de unidades de salud"><div id="map" role="application" aria-label="Mapa interactivo de unidades IMSS-Bienestar"></div><div class="map-status" id="map-status">Cargando unidades…</div>
       <button id="reset-map" class="map-control">↺ <span>VER TODO</span></button>
