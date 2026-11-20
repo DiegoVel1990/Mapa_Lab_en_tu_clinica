@@ -19,7 +19,7 @@
   const popup = (u) => `<div class="popup-title">${esc(u.nombre)}</div><div class="popup-detail"><b>Tipo:</b> ${esc(u.tipo)}<br><b>CLUES:</b> ${esc(u.clues)}<br><b>Órdenes:</b> ${fmt.format(u.ordenes)}<br><b>Municipio:</b> ${esc(u.municipio)}, ${esc(u.entidad)}</div>`;
   const haversine = (a, b) => { const rad = (n) => n * Math.PI / 180; const dLat = rad(b.lat-a.lat), dLng = rad(b.lng-a.lng); const h = Math.sin(dLat/2)**2 + Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dLng/2)**2; return 6371 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1-h)); };
   const pointIcon = (u) => { const d = sizeFor(u.ordenes, window.orderBreaks), c = colors[u.tipo] || '#68776f'; return L.divIcon({ className:'', html:`<span style="display:block;width:${d}px;height:${d}px;border-radius:50%;background:${c};border:2px solid #fff;box-shadow:0 1px 5px #1c3d2e80"></span>`, iconSize:[d+4,d+4], iconAnchor:[(d+4)/2,(d+4)/2] }); };
-  const referenceIcon = () => L.divIcon({ className:'', html:'<span style="display:block;width:18px;height:18px;border-radius:50%;background:#103d32;border:3px solid white;outline:3px solid #103d3240;box-shadow:0 1px 5px #1c3d2e80"></span>', iconSize:[24,24], iconAnchor:[12,12] });
+  const referenceIcon = () => L.divIcon({ className:'', html:'<span style="display:block;width:18px;height:18px;border-radius:50%;background:#9F2241;border:3px solid white;outline:3px solid #9F224140;box-shadow:0 1px 5px #1c3d2e80"></span>', iconSize:[24,24], iconAnchor:[12,12] });
   function clearAnalysis() {
     if (circle) map.removeLayer(circle); if (reference) map.removeLayer(reference);
     circle = reference = null; inside = []; el.csv.hidden = true; el.results.replaceChildren();
