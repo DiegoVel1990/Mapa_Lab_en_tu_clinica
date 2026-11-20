@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#123f35">
+  <meta name="description" content="Análisis geográfico de productividad de unidades IMSS-Bienestar">
+  <title>LABORATORIO + INTERNET EN TU CLÍNICA</title>
+  <link rel="preconnect" href="https://unpkg.com"><link rel="preconnect" href="https://server.arcgisonline.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><span class="brand-mark">+</span><span><strong>IMSS-BIENESTAR</strong><small>Análisis geográfico de productividad</small></span></a><div class="topbar-meta"><span class="live-dot"></span>Corte: 19 de noviembre de 2026</div></header>
+  <main class="layout">
+    <aside class="sidebar"><section class="intro"><p class="eyebrow">ANÁLISIS GEOGRÁFICO</p><h1>LABORATORIO + INTERNET EN TU CLÍNICA</h1><p class="intro-copy">UBICACIÓN DE UNIDADES DENTRO DEL PROGRAMA LABORATORIO + INTERNET EN TU CLÍNICA.</p></section>
+      <div class="stats"><div><strong id="unit-count">—</strong><span>UNIDADES GEORREFERENCIADAS</span></div><i></i><div><strong id="lab-count">—</strong><span>LABORATORIOS PARA ELEGIR</span></div></div><div class="type-counts" aria-label="Conteo de unidades por tipo"><div class="type-count type-lab"><i></i><span>UNIDADES LABORATORIO</span><strong id="count-lab">—</strong></div><div class="type-count type-strategic"><i></i><span>UNIDADES ESTRATÉGICAS</span><strong id="count-strategic">—</strong></div><div class="type-count type-basic"><i></i><span>UNIDADES BÁSICAS</span><strong id="count-basic">—</strong></div></div>
+      <section class="nearby-section"><div class="section-title"><span class="target-icon">◎</span><div><h2>UNIDADES CERCANAS A LOS LABORATORIOS</h2><p>FILTRA POR ENTIDAD Y ELIGE UNA UNIDAD LABORATORIO.</p></div></div><label class="field-label" for="entity-select">ENTIDAD</label><select id="entity-select"><option value="">TODAS LAS ENTIDADES</option></select>
+        <label class="field-label" for="lab-select">UNIDAD DE REFERENCIA (LABORATORIO)</label><select id="lab-select"><option value="">SELECCIONA UN LABORATORIO</option></select>
+        <label class="field-label radius-label" for="radius-input">RADIO DE BÚSQUEDA</label><div class="radius-input"><input id="radius-input" type="number" min="10" max="20" step="1" value="10" inputmode="numeric"><span>KM</span></div><p class="radius-note">ELIGE UN RADIO DE 10 A 20 KM</p>
+        <button id="search-button" class="primary-button" disabled>BUSCAR UNIDADES <span>→</span></button><button id="clear-button" class="secondary-button clear-button" type="button">LIMPIAR BÚSQUEDA <span>↺</span></button>
+        <button id="download-csv" class="secondary-button" hidden>DESCARGAR RESULTADOS CSV <span>↓</span></button>
+        <div id="results" class="results" aria-live="polite"></div>
+      </section>
+      <div class="sidebar-note">LOS TAMAÑOS REFLEJAN EL NÚMERO DE ÓRDENES. ACERCA EL MAPA PARA DISTINGUIR PUNTOS SUPERPUESTOS.</div>
+    </aside>
+    <section class="map-area" aria-label="Mapa de unidades de salud"><div id="map" role="application" aria-label="Mapa interactivo de unidades IMSS-Bienestar"></div><div class="map-status" id="map-status">Cargando unidades…</div>
+      <button id="reset-map" class="map-control">↺ <span>VER TODO</span></button>
+      <div class="map-legend"><strong>TIPO DE UNIDAD</strong><span><i class="dot lab"></i>LABORATORIO</span><span><i class="dot strategic"></i>ESTRATÉGICA</span><span><i class="dot basic"></i>BÁSICA</span><strong class="size-title">ÓRDENES · QUINTILES</strong><span class="sizes" id="size-legend"></span></div>
+      <div class="map-credit">Fuente: Mapa Laboratorio, Estratégico y Básico · © Esri, HERE, Garmin, OpenStreetMap contributors</div>
+    </section>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script><script src="./data/unidades.js"></script><script src="./app.js"></script>
+</body></html>
+
+
+
